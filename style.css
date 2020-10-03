@@ -6,6 +6,7 @@
     --scndLevelBlue: #010624;
     --firstLevelBlue: #00020e;
     --windowsLight: #ebc369;
+    --halloweenOrange: #cc6e06;
 
     /* Fonts */
     --title: 'anudawregular', Arial, sans-serif;
@@ -233,4 +234,160 @@ h1{
     fill: var(--firstLevelBlue);
     transition: fill 0.5s ease;
     cursor: pointer;
+}
+
+/* ********************** Calender  */
+
+.hand-calender{
+    width: 40%;
+    height: 120%;
+    background: url(medias/hand-calender.svg) no-repeat center bottom;
+    position: absolute;
+    z-index: 6;
+    object-fit: contain;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 90%;
+    transform-origin: center bottom;
+}
+
+.wrapper-calender{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    background-color: var(--firstLevelBlue);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+}
+
+.wrapper-calender .btn-leave-calender{
+    width: 5vw;
+    height: 5vw;
+    object-fit: contain;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.wrapper-calender .btn-leave-calender:hover .house-home{
+    fill: var(--halloweenOrange);
+}
+
+.wrapper-calender h1{
+    position: relative;
+    top: 0;
+    right: 0;
+    color: var(--windowsLight);
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+.grid-calender{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-element{
+    width: calc(100%/7);
+    height: calc(100%/5);
+    border: 2px solid var(--firstLevelBlue);
+    background-color: var(--backgroundBlue);
+    position: relative;
+}
+
+.grid-element:nth-child(7n - 5), 
+.grid-element:nth-child(7n - 4), 
+.grid-element:nth-child(7n - 3){
+    background-color: var(--halloweenOrange);
+}
+
+.grid-element p{
+    font-family: var(--title);
+    color: var(--moonWhite);
+    margin: 5px;
+    z-index: 3 !important;
+    text-align: center;
+}
+
+.grid-element .icon-calender{
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.grid-element .closed-icon{
+    background: url(medias/closed-day.svg) no-repeat center center;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.grid-element .open-icon{
+    background: url(medias/open-day.svg) no-repeat center center;
+    object-fit: contain;
+    z-index: 1;
+}
+
+
+
+/* ********************** Prices  */
+
+.wrapper-price{
+    width: 20%;
+    position: absolute;
+    bottom: 20px;
+    left: 55%;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    white-space: nowrap;
+    opacity: 0;
+}
+
+.wrapper-price .btn-leave-price{
+    width: 5vw;
+    height: 5vw;
+    object-fit: contain;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.wrapper-price .btn-leave-price:hover .house-home{
+    fill: var(--halloweenOrange);
+}
+
+.wrapper-price h1{
+    position: relative;
+    font-size: 2rem;
+    top: 0;
+    right: 0;
+    color: var(--windowsLight);
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+.wrapper-price p{
+    font-family: var(--title);
+    color: var(--moonWhite);
+    margin: 5px;
+    text-align: center;
 }

@@ -117,9 +117,9 @@ house_path.addEventListener('mouseout', function(){
 house_path.addEventListener('click', function(){
     gsap.timeline()
         .to(hand_calender, {duration: 2, top: '0%', ease: 'RoughEase.ease'})
-        .to(hand_calender, {scale: '10', y: '450%'})
+        .to(hand_calender, {scale: '11', y: '500%'})
         .to(calender, {duration: 0, display: 'flex'})
-        .to(calender, {opacity: 1})
+        .to(calender, {duration: 0.2, opacity: 1})
     
 });
 windows_path.addEventListener('click', function(){
@@ -151,7 +151,29 @@ pumpkin_path.addEventListener('mouseout', function(){
     prices.style.opacity = 0; 
 })
 
-// **************** Leave alternate pages
+// **************** Cross events
+
+const cross_first = document.querySelector('.cross2');
+const animation_cross = gsap.to(cross_first,{
+    duration: 0.1,
+    y: '1%', 
+    repeat: -1,
+    yoyo: true,
+    paused: true
+})
+
+cross_first.addEventListener('mouseover', function(){
+    animation_cross.play();
+})
+
+cross_first.addEventListener('mouseout', function(){
+    animation_cross.pause();
+})
+
+
+
+
+// **************** Leave alternate page
 
 const btn_calender_home = document.querySelector('.btn-leave-calender');
 
@@ -212,5 +234,23 @@ for(var index = 1; index < 32; index++){
 
 document.querySelector('.grid-calender').innerHTML = content_calender;
 
+// **************** Open credits
 
-    
+const btn_credits = document.querySelector('.toggle-credits');
+const box_credits = document.querySelector('.wrapper-credits');
+let toggle_credit = 0;
+
+btn_credits.addEventListener('click', function(){
+    if(toggle_credit == 0){
+        box_credits.style.transform = 'translateY(0%)';
+        btn_credits.children[0].style.display = 'none';
+        btn_credits.children[1].style.display = 'block';
+        toggle_credit = 1;
+    }
+    else{
+        box_credits.style.transform = 'translateY(-100%)';
+        btn_credits.children[0].style.display = 'block';
+        btn_credits.children[1].style.display = 'none';
+        toggle_credit = 0;
+    }
+})

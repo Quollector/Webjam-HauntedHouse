@@ -186,11 +186,12 @@ h1{
     background: url(medias/cross2.svg) no-repeat center bottom;
     position: absolute;
     transform: rotate(10deg);
-    z-index: 5;
+    z-index: 6;
     object-fit: contain;
     left: 10%;
     bottom: 18%;
     transform-origin: center bottom;
+    cursor: pointer;
 }
 
 .dead-tree3{
@@ -243,7 +244,7 @@ h1{
     height: 120%;
     background: url(medias/hand-calender.svg) no-repeat center bottom;
     position: absolute;
-    z-index: 6;
+    z-index: 7;
     object-fit: contain;
     left: 50%;
     transform: translateX(-50%);
@@ -257,7 +258,7 @@ h1{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 7;
+    z-index: 8;
     background-color: var(--firstLevelBlue);
     flex-direction: column;
     justify-content: center;
@@ -285,8 +286,8 @@ h1{
     position: relative;
     top: 0;
     right: 0;
-    color: var(--windowsLight);
-    opacity: 0.5;
+    color: var(--halloweenOrange);
+    opacity: 1;
     margin-bottom: 20px;
 }
 
@@ -308,7 +309,7 @@ h1{
 .grid-element:nth-child(7n - 5), 
 .grid-element:nth-child(7n - 4), 
 .grid-element:nth-child(7n - 3){
-    background-color: var(--halloweenOrange);
+    background-color: var(--scndLevelBlue);
 }
 
 .grid-element p{
@@ -361,33 +362,64 @@ h1{
     opacity: 0;
 }
 
-.wrapper-price .btn-leave-price{
-    width: 5vw;
-    height: 5vw;
-    object-fit: contain;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-}
-
-.wrapper-price .btn-leave-price:hover .house-home{
-    fill: var(--halloweenOrange);
-}
-
 .wrapper-price h1{
     position: relative;
     font-size: 2rem;
     top: 0;
     right: 0;
-    color: var(--windowsLight);
+    color: var(--halloweenOrange);
     opacity: 0.5;
     margin-bottom: 20px;
 }
 
 .wrapper-price p{
     font-family: var(--title);
-    color: var(--moonWhite);
+    color: var(--windowsLight);
     margin: 5px;
     text-align: center;
+}
+
+/* ********************** Credits  */
+.wrapper-credits{
+    position: absolute;
+    right: 20px;
+    z-index: 9;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-credits{
+    background-color: var(--firstLevelBlue);
+    padding: 10px;
+    color: var(--windowsLight);
+    border-radius: 0 0 0 10px;
+}
+
+.wrapper-credits p{
+    font-family: var(--title);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.wrapper-credits a{
+    color: var(--halloweenOrange);
+    text-decoration: none;
+}
+
+.wrapper-credits button{
+    background-color: var(--firstLevelBlue);
+    padding: 10px;
+    color: var(--windowsLight);
+    border: none;
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    right: 0;
+    font-family: var(--title);
+    font-size: 13px;
+    cursor: pointer;
+    outline: 0;
+}
+
+.wrapper-credits button span:last-child{
+    display: none;
 }

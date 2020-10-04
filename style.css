@@ -31,6 +31,8 @@ main{
     overflow: hidden;
 }
 
+/* ********************** Medias Laptop  */
+
 /* ********************** Background elements */
 /* Third level */
 .moon{
@@ -162,7 +164,7 @@ h1{
 }
 
 #house .windows-path{
-    fill: var(--scndLevelBlue);
+    fill: var(--windowsLight);
     transition: fill 0.5s ease;
     cursor: pointer;
 }
@@ -422,4 +424,579 @@ h1{
 
 .wrapper-credits button span:last-child{
     display: none;
+}
+
+@media screen and (max-width: 1300px) {
+    .zombie-hand{
+        width: 20px;
+        height: 50px;
+        background: url(medias/zombie-hand.svg) no-repeat center bottom;
+        position: absolute;
+        z-index: 3;
+        object-fit: contain;
+        left: 20%;
+        bottom: 21%;
+        transform-origin: center bottom;
+    }
+
+    .grid-element p{
+        font-family: var(--title);
+        color: var(--moonWhite);
+        margin: 5px;
+        z-index: 3 !important;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .wrapper-price h1{
+        position: relative;
+        font-size: 1rem;
+        top: 0;
+        right: 0;
+        color: var(--halloweenOrange);
+        opacity: 0.5;
+        margin-bottom: 10px;
+    }
+
+    .wrapper-price p{
+        font-family: var(--title);
+        color: var(--windowsLight);
+        margin: 5px;
+        text-align: center;
+        font-size: 12px;
+    }
+  }
+
+
+/* ********************** Medias tablets  */
+@media screen and (max-width: 996px) {
+    /* Third level */
+    .moon{
+        width: 60vw;
+        height: 60vw;
+        background-color: var(--moonWhite);
+        position: absolute;
+        top: 15%;
+        left: -10vw;
+        border-radius: 30vw;
+        box-shadow: 0px 0px 600px var(--moonWhite);
+        z-index: 1;
+    }
+
+    h1{
+        font-family: var(--title);
+        position: absolute;
+        font-size: 2rem;
+        top: 30px;
+        left: 0;
+        text-align: center;
+        z-index: 1;
+        color: var(--moonWhite);
+        opacity: 0.1;
+        white-space: nowrap;
+    }
+
+    .cloud {
+        width: 150px;
+        height: 150px;
+        background-image: url(medias/cloud.svg);
+        position: absolute;
+        background-repeat: no-repeat;
+        z-index: 2;
+        left: 110%;
+    }
+
+    /* Second level */
+    .hill-right{
+        top: 50%;
+        left: 40%;
+        width: 160%;
+        padding: 40%;
+    }
+    
+    .hill-left{    
+        top: 60%;
+        left: -60%;
+        width: 260%;
+        padding: 40%;
+    }
+
+    .dead-tree{
+        width: 10%;
+        height: 25%;
+        background: url(medias/dead-tree.svg) no-repeat center bottom;
+        position: absolute;
+        z-index: 3;
+        object-fit: contain;
+        left: 5%;
+        top: 40%;
+        transform-origin: center bottom;
+    }
+
+    .dead-tree2{
+        width: 20%;
+        height: 30%;
+        background: url(medias/dead-tree2.svg) no-repeat center bottom;
+        position: absolute;
+        z-index: 3;
+        object-fit: contain;
+        left: 60%;
+        top: 29%;
+        transform-origin: center bottom;
+    }
+
+    .cross{
+        display: none;
+    }
+
+    .zombie-hand{
+        display: none;
+    }
+
+    .epouvantail{
+        width: 10%;
+        height: 10%;
+        background: url(medias/epouvantail.svg) no-repeat center bottom;
+        position: absolute;
+        z-index: 3;
+        object-fit: contain;
+        left: 88%;
+        bottom: 47%;
+        transform-origin: center bottom;
+    }
+
+    #house{
+        width: 35%;
+        position: absolute;
+        left: 28%;
+        bottom: 38%;
+        z-index: 3;
+    }
+
+    /* First level */
+    .hill-first-level{
+        position: absolute;
+        background-color: var(--firstLevelBlue);
+        border-radius: 100% 100% 0 0;
+        z-index: 5;
+        top: 75%;
+        left: 50%;
+        transform: translateX(-55%);
+        width: 260%;
+        padding: 40%;
+    }
+
+    .cross2{
+        width: 100px;
+        height: 200px;
+        background: url(medias/cross2.svg) no-repeat center bottom;
+        position: absolute;
+        transform: rotate(10deg);
+        z-index: 6;
+        object-fit: contain;
+        left: 10%;
+        bottom: 23%;
+        transform-origin: center bottom;
+        cursor: pointer;
+    }
+
+    .dead-tree3{
+        display: none;
+    }
+
+    .dead-tree4{
+        width: 60%;
+        height: 150%;
+        position: absolute;    
+        background: url(medias/dead-tree3.svg) no-repeat center bottom;
+        z-index: 5;
+        object-fit: contain;
+        left: 70%;
+        top: -60%;
+        transform-origin: center bottom;
+    }
+
+    #pumpkin{
+        width: 10%;
+        position: absolute;
+        left: 60%;
+        bottom: 24%;
+        z-index: 5;
+        transform: rotate(5deg);
+    }
+
+    #pumpkin .face-pumpkin{
+        fill: var(--windowsLight);
+        transition: fill 0.5s ease;
+        cursor: pointer;
+    }
+
+    /* ********************** Calender  */
+
+    .hand-calender{
+        width: 80%;
+        height: 160%;
+        background: url(medias/hand-calender.svg) no-repeat center bottom;
+        position: absolute;
+        z-index: 7;
+        object-fit: contain;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 90%;
+        transform-origin: center bottom;
+    }
+
+    .wrapper-calender{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 8;
+        background-color: var(--firstLevelBlue);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none; 
+        opacity: 0;
+
+        transition: all 0.8s ease-in-out;
+    }
+
+    .wrapper-calender .btn-leave-calender{
+        width: 10vw;
+        height: 10vw;
+        object-fit: contain;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+    }
+
+    .wrapper-calender h1{
+        position: relative;
+        top: 0;
+        right: 0;
+        color: var(--halloweenOrange);
+        opacity: 1;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .grid-element{
+        width: calc(100%/5);
+        height: calc(100%/7);
+        border: 2px solid var(--firstLevelBlue);
+        background-color: var(--backgroundBlue);
+        position: relative;
+    }
+
+    /* ********************** Prices  */
+
+    .wrapper-price{
+        width: 20%;
+        position: absolute;
+        bottom: 20px;
+        left: 55%;
+        z-index: 7;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+        white-space: nowrap;
+        opacity: 1;
+    }
+}
+
+/* ********************** Medias phones  */
+@media screen and (max-width: 576px) {
+    /* Third level */
+    h1{
+        font-family: var(--title);
+        position: absolute;
+        font-size: 1rem;
+        top: 30px;
+        left: 0;
+        text-align: center;
+        z-index: 1;
+        color: var(--moonWhite);
+        opacity: 0.1;
+        white-space: nowrap;
+    }
+
+    .cloud {
+        width: 100px;
+        height: 100px;
+        background-image: url(medias/cloud.svg);
+        position: absolute;
+        background-repeat: no-repeat;
+        z-index: 2;
+        left: 110%;
+    }
+
+    /* Second level */
+    .hill-right{
+        top: 40%;
+        left: 40%;
+        width: 160%;
+        padding: 40%;
+    }
+    
+    .hill-left{    
+        top: 50%;
+        left: -60%;
+        width: 260%;
+        padding: 40%;
+    }
+
+    .dead-tree{
+        width: 10%;
+        height: 25%;
+        background: url(medias/dead-tree.svg) no-repeat center bottom;
+        position: absolute;
+        z-index: 3;
+        object-fit: contain;
+        left: 5%;
+        top: 30%;
+        transform-origin: center bottom;
+    }
+
+    .dead-tree2{
+        width: 20%;
+        height: 30%;
+        background: url(medias/dead-tree2.svg) no-repeat center bottom;
+        position: absolute;
+        z-index: 3;
+        object-fit: contain;
+        left: 60%;
+        top: 17%;
+        transform-origin: center bottom;
+    }
+
+    .cross{
+        display: none;
+    }
+
+    .zombie-hand{
+        display: none;
+    }
+
+    .epouvantail{
+        display: none;
+    }
+
+    #house{
+        width: 35%;
+        position: absolute;
+        left: 28%;
+        bottom: 49%;
+        z-index: 3;
+    }
+
+    /* First level */
+    .hill-first-level{
+        position: absolute;
+        background-color: var(--firstLevelBlue);
+        border-radius: 100% 100% 0 0;
+        z-index: 5;
+        top: 75%;
+        left: 50%;
+        transform: translateX(-55%);
+        width: 260%;
+        padding: 40%;
+    }
+
+    .cross2{
+        width: 80px;
+        height: 150px;
+        background: url(medias/cross2.svg) no-repeat center bottom;
+        position: absolute;
+        transform: rotate(10deg);
+        z-index: 6;
+        object-fit: contain;
+        left: 10%;
+        bottom: 23%;
+        transform-origin: center bottom;
+        cursor: pointer;
+    }
+
+    .dead-tree3{
+        display: none;
+    }
+
+    .dead-tree4{
+        width: 60%;
+        height: 150%;
+        position: absolute;    
+        background: url(medias/dead-tree3.svg) no-repeat center bottom;
+        z-index: 5;
+        object-fit: contain;
+        left: 70%;
+        top: -70%;
+        transform-origin: center bottom;
+    }
+
+    #pumpkin{
+        width: 20%;
+        position: absolute;
+        left: 60%;
+        bottom: 24%;
+        z-index: 5;
+        transform: rotate(5deg);
+    }
+
+    /* ********************** Calender  */
+
+    .hand-calender{
+        width: 100%;
+        height: 180%;
+        background: url(medias/hand-calender.svg) no-repeat center bottom;
+        position: absolute;
+        z-index: 7;
+        object-fit: contain;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100%;
+        transform-origin: center bottom;
+    }
+
+    .wrapper-calender{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 8;
+        background-color: var(--firstLevelBlue);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none; 
+        opacity: 0;
+
+        transition: all 0.8s ease-in-out;
+    }
+
+    .wrapper-calender .btn-leave-calender{
+        width: 7vw;
+        height: 7vw;
+        object-fit: contain;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        cursor: pointer;
+    }
+
+    .wrapper-calender h1{
+        position: relative;
+        top: 0;
+        right: 0;
+        color: var(--halloweenOrange);
+        opacity: 1;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .grid-calender{
+        width: 95%;
+        height: 80%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .grid-element{
+        width: calc(100%/5);
+        height: calc(100%/7);
+        border: 2px solid var(--firstLevelBlue);
+        background-color: var(--backgroundBlue);
+        position: relative;
+    }
+
+    .grid-element p{
+        font-family: var(--title);
+        color: var(--moonWhite);
+        margin: 5px;
+        z-index: 3 !important;
+        text-align: center;
+        font-size: 6px;
+    }
+
+    /* ********************** Prices  */
+
+    .wrapper-price{
+        width: 20%;
+        position: absolute;
+        bottom: 20px;
+        left: 55%;
+        z-index: 7;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+        white-space: nowrap;
+        opacity: 1;
+    }
+
+    .wrapper-price h1{
+        position: relative;
+        font-size: 0.8rem;
+        top: 0;
+        right: 0;
+        color: var(--halloweenOrange);
+        opacity: 0.5;
+        margin-bottom: 10px;
+    }
+
+    .wrapper-price p{
+        font-family: var(--title);
+        color: var(--windowsLight);
+        margin: 5px;
+        text-align: center;
+        font-size: 0.7rem;
+    }
+
+    /* ********************** Credits  */
+    .wrapper-credits{
+        position: absolute;
+        right: 10px;
+        z-index: 9;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .content-credits{
+        background-color: var(--firstLevelBlue);
+        padding: 5px;
+        color: var(--windowsLight);
+        border-radius: 0 0 0 10px;
+    }
+
+    .wrapper-credits p{
+        font-family: var(--title);
+        font-size: 13px;
+        margin-bottom: 10px;
+        font-size: 6px;
+    }
+
+    .wrapper-credits a{
+        color: var(--halloweenOrange);
+        text-decoration: none;
+        font-size: 6px;
+    }
+
+    .wrapper-credits button{
+        background-color: var(--firstLevelBlue);
+        padding: 10px;
+        color: var(--windowsLight);
+        border: none;
+        border-radius: 0 0 10px 10px;
+        position: absolute;
+        right: 0;
+        font-family: var(--title);
+        font-size: 6px;
+        cursor: pointer;
+        outline: 0;
+    }
 }

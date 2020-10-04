@@ -5,6 +5,9 @@ const scndLevelBlue = '#010624';
 const firstLevelBlue = '#00020e';
 const windowsLight = '#ebc369';
 
+const tablet = window.matchMedia("(max-width: 996px)");
+const mobile = window.matchMedia("(max-width: 576px)");
+
 
 
 
@@ -100,34 +103,61 @@ const hand_calender = document.querySelector('.hand-calender');
 const prices = document.querySelector('.wrapper-price');
 
 // Hover du SVG house
-house_path.addEventListener('mouseover', function(){    
-    windows_path.style.fill = windowsLight;   
-
-    windows_path.addEventListener('mouseover', function(){    
+if (tablet.matches) {} 
+else {
+    house_path.addEventListener('mouseover', function(){    
         windows_path.style.fill = windowsLight;   
+    
+        windows_path.addEventListener('mouseover', function(){    
+            windows_path.style.fill = windowsLight;   
+        })
     })
-})
-
-house_path.addEventListener('mouseout', function(){
-    windows_path.style.fill = scndLevelBlue;
-})
+    
+    house_path.addEventListener('mouseout', function(){
+        windows_path.style.fill = scndLevelBlue;
+    })
+}
 
 // Click du SVG house
 
 house_path.addEventListener('click', function(){
-    gsap.timeline()
+    if(mobile.matches){
+        gsap.timeline()
+        .to(hand_calender, {duration: 2, top: '-71%', ease: 'RoughEase.ease'})
+        .to(hand_calender, {scale: '13', y: '400%'})
+        .to(calender, {duration: 0, display: 'flex'})
+        .to(calender, {duration: 0.2, opacity: 1})
+    }
+    else if (tablet.matches) { 
+        gsap.timeline()
+        .to(hand_calender, {duration: 2, top: '-30%', ease: 'RoughEase.ease'})
+        .to(hand_calender, {scale: '11', y: '500%'})
+        .to(calender, {duration: 0, display: 'flex'})
+        .to(calender, {duration: 0.2, opacity: 1})
+    } 
+    else {
+        gsap.timeline()
         .to(hand_calender, {duration: 2, top: '0%', ease: 'RoughEase.ease'})
         .to(hand_calender, {scale: '11', y: '500%'})
         .to(calender, {duration: 0, display: 'flex'})
         .to(calender, {duration: 0.2, opacity: 1})
-    
+    }    
 });
+
 windows_path.addEventListener('click', function(){
-    gsap.timeline()
-        .to(hand_calender, {duration: 2, top: '0%', ease: 'RoughEase.ease'})
-        .to(hand_calender, {scale: '10', y: '450%'})
+    if (tablet.matches) { 
+        gsap.timeline()
+        .to(hand_calender, {duration: 2, top: '-30%', ease: 'RoughEase.ease'})
+        .to(hand_calender, {scale: '11', y: '500%'})
         .to(calender, {duration: 0, display: 'flex'})
-        .to(calender, {opacity: 1})
+        .to(calender, {duration: 0.2, opacity: 1})
+    } else {
+        gsap.timeline()
+        .to(hand_calender, {duration: 2, top: '0%', ease: 'RoughEase.ease'})
+        .to(hand_calender, {scale: '11', y: '500%'})
+        .to(calender, {duration: 0, display: 'flex'})
+        .to(calender, {duration: 0.2, opacity: 1})
+    }
 });
 
 // **************** Pumpkin events
@@ -136,24 +166,29 @@ let pumpkin_path = document.querySelector('.body-pumpkin');
 let pumpkin_face = document.querySelector('.face-pumpkin');
 
 // Hover du SVG pumpkin
-pumpkin_path.addEventListener('mouseover', function(){    
-    pumpkin_face.style.fill = windowsLight;   
-    prices.style.opacity = 1;
-
-    pumpkin_face.addEventListener('mouseover', function(){    
-        pumpkin_face.style.fill = windowsLight;  
-        prices.style.opacity = 1; 
+if (tablet.matches) {} 
+else {
+    pumpkin_path.addEventListener('mouseover', function(){    
+        pumpkin_face.style.fill = windowsLight;   
+        prices.style.opacity = 1;
+    
+        pumpkin_face.addEventListener('mouseover', function(){    
+            pumpkin_face.style.fill = windowsLight;  
+            prices.style.opacity = 1; 
+        })
     })
-})-
+    
+    pumpkin_path.addEventListener('mouseout', function(){
+        pumpkin_face.style.fill = firstLevelBlue;
+        prices.style.opacity = 0; 
+    })
+}
 
-pumpkin_path.addEventListener('mouseout', function(){
-    pumpkin_face.style.fill = firstLevelBlue;
-    prices.style.opacity = 0; 
-})
 
 // **************** Cross events
 
 const cross_first = document.querySelector('.cross2');
+
 const animation_cross = gsap.to(cross_first,{
     duration: 0.1,
     y: '1%', 
@@ -162,15 +197,17 @@ const animation_cross = gsap.to(cross_first,{
     paused: true
 })
 
-cross_first.addEventListener('mouseover', function(){
-    animation_cross.play();
-})
-
-cross_first.addEventListener('mouseout', function(){
-    animation_cross.pause();
-})
-
-
+if (tablet.matches) { 
+    animation_cross.play(); 
+} else {
+    cross_first.addEventListener('mouseover', function(){
+        animation_cross.play();
+    })
+    
+    cross_first.addEventListener('mouseout', function(){
+        animation_cross.pause();
+    })
+}  
 
 
 // **************** Leave alternate page
@@ -178,11 +215,19 @@ cross_first.addEventListener('mouseout', function(){
 const btn_calender_home = document.querySelector('.btn-leave-calender');
 
 btn_calender_home.addEventListener('click', function(){
-    gsap.timeline()
+    if (tablet.matches) { 
+        gsap.timeline()
         .to(calender, {opacity: 0})
         .to(calender, {duration: 0, display: 'none'})
         .to(hand_calender, {scale: '1', y: '0%'})
-        .to(hand_calender, {duration: 2, top: '90%', ease: 'RoughEase.ease'})       
+        .to(hand_calender, {duration: 2, top: '90%', ease: 'RoughEase.ease'}) 
+    } else {
+        gsap.timeline()
+        .to(calender, {opacity: 0})
+        .to(calender, {duration: 0, display: 'none'})
+        .to(hand_calender, {scale: '1', y: '0%'})
+        .to(hand_calender, {duration: 2, top: '90%', ease: 'RoughEase.ease'}) 
+    }      
 })
 
 // **************** Calender creation
